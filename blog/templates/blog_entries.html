@@ -17,7 +17,11 @@ Entries
 
 
 <ol>
-
+<p1>
+    {%if username != None%}
+        Welcome {{username }}
+    {%endif%}
+</p1>
 {% for key, value in Entries %}
 
 <li>

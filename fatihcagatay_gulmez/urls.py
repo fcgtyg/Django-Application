@@ -17,11 +17,17 @@ from django.conf.urls import url
 from django.contrib import admin
 from blog.views import *
 from todo.views import *
+from users.views import *
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^blog/entries/$', show_entries),
+    url(r'^blog/entries/$' , show_entries),
     url(r'^blog/entries/(?P<todo_id>[0-9]+)', get_entries),
     url(r'^todo/$', show_todo),
-    url(r'^todo/(?P<todo_id>[0-9]+)', get_todo)
+    url(r'^todo/(?P<todo_id>[0-9]+)', get_todo),
+    url(r'^users/register/$', signup),
+    url(r'^users/login/$', login)
 ]
+#
+
 
