@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(mp*oco8uu80wvq1q+u@&c%nh8j@-036^p4#yv^jgsk+fwh8vt'
+SECRET_KEY = '5#4053&fa%pr^ta-bc2xgt3%bzx6oxk_si8+70ncijb-9(0nz%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'todo',
     'blog',
+    'tags',
     'users'
 ]
 
@@ -57,11 +58,10 @@ ROOT_URLCONF = 'fatihcagatay_gulmez.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'todo/templates'),
-            os.path.join(BASE_DIR, 'users/templates'),
-            os.path.join(BASE_DIR, 'blog/templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'todo/templates'),
+                 os.path.join(BASE_DIR, 'users/templates'),
+                 os.path.join(BASE_DIR, 'tags/templates'),
+                 os.path.join(BASE_DIR, 'blog/templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

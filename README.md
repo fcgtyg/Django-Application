@@ -1,1 +1,1 @@
-https://github.com/fcgtyg/software-assignment-1.git
+https://github.com/fcgtyg/software-assignment-1

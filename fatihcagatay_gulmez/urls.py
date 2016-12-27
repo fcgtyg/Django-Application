@@ -13,21 +13,22 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-from blog.views import *
+from django.http import HttpResponseRedirect
 from todo.views import *
 from users.views import *
+from blog.views import *
+from tags.views import *
 
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^blog/entries/$' , show_entries),
-    url(r'^blog/entries/(?P<todo_id>[0-9]+)', get_entries),
-    url(r'^todo/$', show_todo),
-    url(r'^todo/(?P<todo_id>[0-9]+)', get_todo),
-    url(r'^users/register/$', signup),
-    url(r'^users/login/$', login)
-]
-#
-
+urlpatterns = [url(r'^admin/', admin.site.urls),
+               url(r'^todos/', show_todo),
+               url(r'^todos/(?P<todo_id>[0-9]+)', get_todo),
+               url(r'^users/register/$', signup),
+               url(r'^users/', include("django.contrib.auth.urls")),
+               url(r'^tags/$', show_tag),
+               url(r'^accounts/profile', redirect),
+               url(r'^blog/entries/$', show_entries),
+               url(r'^blog/entries/(?P<entry_id>[0-9]+)', get_entry),
+               ]
 

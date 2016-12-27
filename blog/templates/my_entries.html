@@ -7,30 +7,32 @@
     <meta charset="UTF-8">
 
     <title>
-	Todos
+	Entries
     </title>
 
 </head>
 
-<body>{% if request.user.username %}
+<body>
+    
+{% if request.user.username %}
 
-    <h1>Welcome {{ request.user.username }}</h1>
+        <h1>Welcome {{ request.user.username }}</h1>
 
-    <a href="/users/logout">Logout</a>
-
+        <a href="/users/logout">Logout</a>
+    
 {% endif %}
 
 
 <ol>
-    {% for todo in todos %}
+    {% for entry in entries%}
 
         <li>
 
-            <h1>{{ todo.name }}</h1>
+            <h1>{{ entry.name }}</h1>
 
-            <p>{{ todo.description }}</p>
+            <p>{{ entry.description }}</p>
 
-            {% for tag in todo.tags.all %}
+            {% for tag in entry.tags.all %}
 
                 {{ tag.name }}
 
@@ -48,7 +50,7 @@
 
     {% csrf_token %}
 
-    <input name="todo_name">
+    <input name="entry_name">
 
     <input name="description_name">
 
