@@ -1,4 +1,4 @@
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
 from django.contrib.auth.models import User
@@ -12,7 +12,6 @@ def signup(request):
         return HttpResponse("Success!")
 
     return render(request, "register.html")
-
 
 def redirect(request):
    return HttpResponseRedirect('/blog/entries')

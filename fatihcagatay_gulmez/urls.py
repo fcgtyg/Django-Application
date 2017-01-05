@@ -30,5 +30,9 @@ urlpatterns = [url(r'^admin/', admin.site.urls),
                url(r'^accounts/profile', redirect),
                url(r'^blog/entries/$', show_entries),
                url(r'^blog/entries/(?P<entry_id>[0-9]+)', get_entry),
+               url(r'^todos/all/$', show_all_todo),
+               url(r'^todos/all/user/(?P<userId>[0-9]+)$', show_all_todo_from_user),
+               url(r'^blog/entries/all/$', show_all_entries),
+               url(r'^blog/entries/all/user/(?P<userId>[0-9]+)$', show_all_entries_from_user),
                ]
 

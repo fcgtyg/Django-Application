@@ -34,10 +34,11 @@
 
             {% for tag in entry.tags.all %}
 
-                {{ tag.name }}
+                +{{ tag.name }}
 
             {% endfor  %}
 
+	    <p>&nbsp;&nbsp;&nbsp; written by: {{ entry.owner.username }}</p>
         </li>
 
     {% endfor %}
@@ -45,6 +46,8 @@
 </ol>
 
 
+
+{% if form %}
 
 <form method="POST">
 
@@ -55,6 +58,9 @@
     <button type="submit">Submit</button>
 
 </form>
+
+{% endif %}
+
 
 
 
